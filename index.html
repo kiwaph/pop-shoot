@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop-shoot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <!-- Assets-->
+
+    <!-- BACKGROUNDS -->
+        <img src="./assets/backgrounds/stage0back.png" id="stage0Back">
+        <img src="./assets/backgrounds/stage0front.png" id="stage0Front">
+        <img src="./assets/backgrounds/stage1back.png" id="stage1Back">
+        <img src="./assets/backgrounds/stage1front.png" id="stage1Front">
+        <img src="./assets/backgrounds/stage2back.png" id="stage2Back">
+        <img src="./assets/backgrounds/stage2front.png" id="stage2Front">
+        <img src="./assets/backgrounds/stage3back.png" id="stage3Back">
+        <img src="./assets/backgrounds/stage3front.png" id="stage3Front">
+        <img src="./assets/backgrounds/stage4back.png" id="stage4Back">
+        <img src="./assets/backgrounds/stage4front.png" id="stage4Front">
+        <img src="./assets/menu.png" id="menu">
+    <!-- BACKGROUNDS END -->
+
+
+    <!-- PLAYER -->
+        <img src="./assets/sprites/player/player.png" id="player">
+        <img src="./assets/sprites/player/shield.png" id="shield">
+        <img src="./assets/sprites/player/shieldmetal.png" id="shieldMetal">
+        <img src="./assets/sprites/player/shieldemp.png" id="shieldEmp">
+        <img src="./assets/sprites/player/shieldunderfire.png" id="shieldUnderfire">
+        <img src="./assets/sprites/player/invincibility.png" id="invincibility">
+        <img src="./assets/sprites/player/flame0.png" id="flame0">
+        <img src="./assets/sprites/player/flame1.png" id="flame1">
+        <img src="./assets/sprites/player/flame2.png" id="flame2">
+        <img src="./assets/sprites/player/flame3.png" id="flame3">
+        <img src="./assets/sprites/player/flame4.png" id="flame4">
+        <img src="./assets/sprites/player/flame5.png" id="flame5">
+        <img src="./assets/sprites/player/flame6.png" id="flame6">
+        <img src="./assets/sprites/player/flame7.png" id="flame7">
+        <img src="./assets/sprites/player/flame8.png" id="flame8">
+        <img src="./assets/sprites/player/flame9.png" id="flame9">
+        <img src="./assets/sprites/player/flame10.png" id="flame10">
+        <img src="./assets/sprites/player/flame11.png" id="flame11">
+    <!-- PLAYER END -->
+
+
+    <!-- ENEMIES -->
+        <!-- GREEN -->
+        <img src="./assets/sprites/enemies/greenInvader.png" id="greenInvader">
+        <img src="./assets/sprites/enemies/greenPlacer.png" id="greenPlacer">
+        <img src="./assets/sprites/enemies/greenTerror.png" id="greenTerror">
+        <img src="./assets/sprites/enemies/greenEmperor.png" id="greenEmperor">
+        <img src="./assets/sprites/enemies/greenUfo.png" id="greenUfo">
+        
+        <!-- BLUE -->
+        <img src="./assets/sprites/enemies/blueInvader.png" id="blueInvader">
+        <img src="./assets/sprites/enemies/blueUfo.png" id="blueUfo">
+        <img src="./assets/sprites/enemies/bluePlacer.png" id="bluePlacer">
+        <img src="./assets/sprites/enemies/blueTerror.png" id="blueTerror">
+        <img src="./assets/sprites/enemies/blueEmperor.png" id="blueEmperor">
+
+        <!-- RED -->
+        <img src="./assets/sprites/enemies/redInvader.png" id="redInvader">
+        <img src="./assets/sprites/enemies/redPlacer.png" id="redPlacer">
+        <img src="./assets/sprites/enemies/redTerror.png" id="redTerror">
+        <img src="./assets/sprites/enemies/redEmperor.png" id="redEmperor">
+        <img src="./assets/sprites/enemies/redUfo.png" id="redUfo">
+
+        <!-- BLACK -->
+        <img src="./assets/sprites/enemies/blackInvader.png" id="blackInvader">
+        <img src="./assets/sprites/enemies/blackPlacer.png" id="blackPlacer">
+        <img src="./assets/sprites/enemies/blackTerror.png" id="blackTerror">
+        <img src="./assets/sprites/enemies/blackEmperor.png" id="blackEmperor">
+        
+        <!-- OTHER -->
+        <img src="./assets/sprites/enemies/yellowUfo.png" id="yellowUfo">
+        <img src="./assets/sprites/enemies/diver.png" id="diver">
+        
+        <!-- BOSSES -->
+        <img src="./assets/sprites/enemies/EyeInTheSky.png" id="EyeInTheSky">
+        <img src="./assets/sprites/enemies/metalEmperor.png" id="metalEmperor">
+        <img src="./assets/sprites/enemies/familiarSight.png" id="familiarSight">
+        <img src="./assets/sprites/enemies/controller.png" id="controller">
+        <img src="./assets/sprites/enemies/rider.png" id="rider">
+
+        <!-- PACKAGES -->
+        <img src="./assets/sprites/enemies/redPackage.png" id="redPackage">
+        <img src="./assets/sprites/enemies/orangePackage.png" id="orangePackage">
+    <!-- ENEMIES END -->
+
+
+    <!-- EFFECTS -->
+        <img src="./assets/sprites/effects/fog.png" id="fog">
+        <img src="./assets/sprites/effects/foggreen.png" id="foggreen">
+        <img src="./assets/sprites/effects/particle0.png" id="particle0">
+        <img src="./assets/sprites/effects/particle1.png" id="particle1">
+        <img src="./assets/sprites/effects/particle2.png" id="particle2">
+        <img src="./assets/sprites/effects/particle3.png" id="particle3">
+        <img src="./assets/sprites/effects/particlequad0.png" id="particlequad0">
+        <img src="./assets/sprites/effects/particlequad1.png" id="particlequad1">
+        <img src="./assets/sprites/effects/particlequad2.png" id="particlequad2">
+        <img src="./assets/sprites/effects/particlequad3.png" id="particlequad3">
+        <img src="./assets/sprites/effects/flashparticle.png" id="flashParticle">
+        <img src="./assets/sprites/effects/scoreball.png" id="scoreball">
+    <!-- EFFECTS END-->
+    
+
+    <!-- LASERS -->
+        <img src="./assets/sprites/lasers/laser.png" id="laser">
+        <img src="./assets/sprites/lasers/seeker.png" id="seeker">
+        <img src="./assets/sprites/lasers/rocket.png" id="rocket">
+        <img src="./assets/sprites/lasers/piercer.png" id="piercer">
+        <img src="./assets/sprites/lasers/bomb.png" id="bomb">
+        <img src="./assets/sprites/lasers/quad.png" id="quad">
+        <img src="./assets/sprites/lasers/fireLaser.png" id="fireLaser">
+        <img src="./assets/sprites/lasers/parasites/parasites0.png" id="parasites0">
+        <img src="./assets/sprites/lasers/parasites/parasites1.png" id="parasites1">
+        <img src="./assets/sprites/lasers/parasites/parasites2.png" id="parasites2">
+        <img src="./assets/sprites/lasers/parasites/parasites3.png" id="parasites3">
+
+    <!-- LASERS END -->
+
+
+    <!-- HUD -->
+        <img src="./assets/sprites/hud/glassleft.png" id="glassLeft">
+        <img src="./assets/sprites/hud/glassright.png" id="glassRight">
+        <img src="./assets/sprites/hud/glassbar.png" id="glassBar">
+        <img src="./assets/sprites/hud/pause.png" id="pause">
+        <img src="./assets/sprites/hud/gameoverglass.png" id="gameoverglass">
+        <img src="./assets/sprites/hud/shielddown.png" id="shieldDown">
+        <img src="./assets/sprites/hud/stage1.png" id="stage1">
+        <img src="./assets/sprites/hud/stage2.png" id="stage2">
+        <img src="./assets/sprites/hud/stage3.png" id="stage3">
+        <img src="./assets/sprites/hud/stage4.png" id="stage4">
+        <img src="./assets/sprites/hud/stage5.png" id="stage5">
+    <!-- HUD END -->
+    
+    <!-- UPGRADES -->
+        <!-- NOTIFICATIONS -->
+        <img src="./assets/sprites/hud/upgrades/bombs_notification.png" id="bombs_notification">
+        <img src="./assets/sprites/hud/upgrades/toxic_notification.png" id="toxic_notification">
+        <img src="./assets/sprites/hud/upgrades/parasites_notification.png" id="parasites_notification">
+        <img src="./assets/sprites/hud/upgrades/machinegun_notification.png" id="machinegun_notification">
+        <img src="./assets/sprites/hud/upgrades/greed_notification.png" id="greed_notification">
+        <img src="./assets/sprites/hud/upgrades/timefreeze_notification.png" id="timefreeze_notification">
+        <img src="./assets/sprites/hud/upgrades/piercers_notification.png" id="piercers_notification">
+        <img src="./assets/sprites/hud/upgrades/loopers_notification.png" id="loopers_notification">
+        <img src="./assets/sprites/hud/upgrades/metalshield_notification.png" id="metalshield_notification">
+        <img src="./assets/sprites/hud/upgrades/nitrogen_notification.png" id="nitrogen_notification">
+        <img src="./assets/sprites/hud/upgrades/uraniumfuel_notification.png" id="uraniumfuel_notification">
+        <img src="./assets/sprites/hud/upgrades/damage_notification.png" id="damage_notification">
+        <img src="./assets/sprites/hud/upgrades/spray_notification.png" id="spray_notification">
+        <img src="./assets/sprites/hud/upgrades/rocket_notification.png" id="rocket_notification">
+        <img src="./assets/sprites/hud/upgrades/emp_notification.png" id="emp_notification">
+        <img src="./assets/sprites/hud/upgrades/seekers_notification.png" id="seekers_notification">
+        <img src="./assets/sprites/hud/upgrades/clock_notification.png" id="clock_notification">
+
+        <!-- PAUSE -->
+        <img src="./assets/sprites/hud/upgrades/bombs_pause.png" id="bombs_pause">
+        <img src="./assets/sprites/hud/upgrades/toxic_pause.png" id="toxic_pause">
+        <img src="./assets/sprites/hud/upgrades/parasites_pause.png" id="parasites_pause">
+        <img src="./assets/sprites/hud/upgrades/machinegun_pause.png" id="machinegun_pause">
+        <img src="./assets/sprites/hud/upgrades/greed_pause.png" id="greed_pause">
+        <img src="./assets/sprites/hud/upgrades/timefreeze_pause.png" id="timefreeze_pause">
+        <img src="./assets/sprites/hud/upgrades/piercers_pause.png" id="piercers_pause">
+        <img src="./assets/sprites/hud/upgrades/loopers_pause.png" id="loopers_pause">
+        <img src="./assets/sprites/hud/upgrades/metalshield_pause.png" id="metalshield_pause">
+        <img src="./assets/sprites/hud/upgrades/nitrogen_pause.png" id="nitrogen_pause">
+        <img src="./assets/sprites/hud/upgrades/uraniumfuel_pause.png" id="uraniumfuel_pause">
+        <img src="./assets/sprites/hud/upgrades/damage_pause.png" id="damage_pause">
+        <img src="./assets/sprites/hud/upgrades/spray_pause.png" id="spray_pause">
+        <img src="./assets/sprites/hud/upgrades/rocket_pause.png" id="rocket_pause">
+        <img src="./assets/sprites/hud/upgrades/emp_pause.png" id="emp_pause">
+        <img src="./assets/sprites/hud/upgrades/seekers_pause.png" id="seekers_pause">
+        <img src="./assets/sprites/hud/upgrades/clock_pause.png" id="clock_pause">
+
+        <!-- ICONS -->
+        <img src="./assets/sprites/hud/upgrades/bombs_icon.png" id="bombs_icon">
+        <img src="./assets/sprites/hud/upgrades/toxic_icon.png" id="toxic_icon">
+        <img src="./assets/sprites/hud/upgrades/parasites_icon.png" id="parasites_icon">
+        <img src="./assets/sprites/hud/upgrades/machinegun_icon.png" id="machinegun_icon">
+        <img src="./assets/sprites/hud/upgrades/greed_icon.png" id="greed_icon">
+        <img src="./assets/sprites/hud/upgrades/timefreeze_icon.png" id="timefreeze_icon">
+        <img src="./assets/sprites/hud/upgrades/piercers_icon.png" id="piercers_icon">
+        <img src="./assets/sprites/hud/upgrades/loopers_icon.png" id="loopers_icon">
+        <img src="./assets/sprites/hud/upgrades/metalshield_icon.png" id="metalshield_icon">
+        <img src="./assets/sprites/hud/upgrades/nitrogen_icon.png" id="nitrogen_icon">
+        <img src="./assets/sprites/hud/upgrades/uraniumfuel_icon.png" id="uraniumfuel_icon">
+        <img src="./assets/sprites/hud/upgrades/damage_icon.png" id="damage_icon">
+        <img src="./assets/sprites/hud/upgrades/spray_icon.png" id="spray_icon">
+        <img src="./assets/sprites/hud/upgrades/rocket_icon.png" id="rocket_icon">
+        <img src="./assets/sprites/hud/upgrades/emp_icon.png" id="emp_icon">
+        <img src="./assets/sprites/hud/upgrades/seekers_icon.png" id="seekers_icon">
+        <img src="./assets/sprites/hud/upgrades/clock_icon.png" id="clock_icon">
+    <!-- UPGRADES END -->
+
+    <!-- BOOMS -->
+        <!-- GREEN INVADER -->
+        <img src="./assets/sprites/booms/invader_green/ig0.png" id="ig0">
+        <img src="./assets/sprites/booms/invader_green/ig1.png" id="ig1">
+        <img src="./assets/sprites/booms/invader_green/ig2.png" id="ig2">
+        <img src="./assets/sprites/booms/invader_green/ig3.png" id="ig3">
+        <img src="./assets/sprites/booms/invader_green/ig4.png" id="ig4">
+        <img src="./assets/sprites/booms/invader_green/ig5.png" id="ig5">
+        <img src="./assets/sprites/booms/invader_green/ig6.png" id="ig6">
+        <img src="./assets/sprites/booms/invader_green/ig7.png" id="ig7">
+        <img src="./assets/sprites/booms/invader_green/ig8.png" id="ig8">
+        <img src="./assets/sprites/booms/invader_green/ig9.png" id="ig9">
+        <img src="./assets/sprites/booms/invader_green/ig10.png" id="ig10">
+        <img src="./assets/sprites/booms/invader_green/ig11.png" id="ig11">
+        <img src="./assets/sprites/booms/invader_green/ig12.png" id="ig12">
+        <img src="./assets/sprites/booms/invader_green/ig13.png" id="ig13">
+        <img src="./assets/sprites/booms/invader_green/ig14.png" id="ig14">
+        <img src="./assets/sprites/booms/invader_green/ig15.png" id="ig15">
+
+        <!-- BLUE INVADER -->
+        <img src="./assets/sprites/booms/invader_blue/ibl0.png" id="ibl0">
+        <img src="./assets/sprites/booms/invader_blue/ibl1.png" id="ibl1">
+        <img src="./assets/sprites/booms/invader_blue/ibl2.png" id="ibl2">
+        <img src="./assets/sprites/booms/invader_blue/ibl3.png" id="ibl3">
+        <img src="./assets/sprites/booms/invader_blue/ibl4.png" id="ibl4">
+        <img src="./assets/sprites/booms/invader_blue/ibl5.png" id="ibl5">
+        <img src="./assets/sprites/booms/invader_blue/ibl6.png" id="ibl6">
+        <img src="./assets/sprites/booms/invader_blue/ibl7.png" id="ibl7">
+        <img src="./assets/sprites/booms/invader_blue/ibl8.png" id="ibl8">
+        <img src="./assets/sprites/booms/invader_blue/ibl9.png" id="ibl9">
+        <img src="./assets/sprites/booms/invader_blue/ibl10.png" id="ibl10">
+        <img src="./assets/sprites/booms/invader_blue/ibl11.png" id="ibl11">
+        <img src="./assets/sprites/booms/invader_blue/ibl12.png" id="ibl12">
+        <img src="./assets/sprites/booms/invader_blue/ibl13.png" id="ibl13">
+        <img src="./assets/sprites/booms/invader_blue/ibl14.png" id="ibl14">
+        <img src="./assets/sprites/booms/invader_blue/ibl15.png" id="ibl15">
+
+        <!-- RED INVADER -->
+        <img src="./assets/sprites/booms/invader_red/ir0.png" id="ir0">
+        <img src="./assets/sprites/booms/invader_red/ir1.png" id="ir1">
+        <img src="./assets/sprites/booms/invader_red/ir2.png" id="ir2">
+        <img src="./assets/sprites/booms/invader_red/ir3.png" id="ir3">
+        <img src="./assets/sprites/booms/invader_red/ir4.png" id="ir4">
+        <img src="./assets/sprites/booms/invader_red/ir5.png" id="ir5">
+        <img src="./assets/sprites/booms/invader_red/ir6.png" id="ir6">
+        <img src="./assets/sprites/booms/invader_red/ir7.png" id="ir7">
+        <img src="./assets/sprites/booms/invader_red/ir8.png" id="ir8">
+        <img src="./assets/sprites/booms/invader_red/ir9.png" id="ir9">
+        <img src="./assets/sprites/booms/invader_red/ir10.png" id="ir10">
+        <img src="./assets/sprites/booms/invader_red/ir11.png" id="ir11">
+        <img src="./assets/sprites/booms/invader_red/ir12.png" id="ir12">
+        <img src="./assets/sprites/booms/invader_red/ir13.png" id="ir13">
+        <img src="./assets/sprites/booms/invader_red/ir14.png" id="ir14">
+        <img src="./assets/sprites/booms/invader_red/ir15.png" id="ir15">
+
+        <!-- BLACK INVADER -->
+        <img src="./assets/sprites/booms/invader_black/ib0.png" id="ib0">
+        <img src="./assets/sprites/booms/invader_black/ib1.png" id="ib1">
+        <img src="./assets/sprites/booms/invader_black/ib2.png" id="ib2">
+        <img src="./assets/sprites/booms/invader_black/ib3.png" id="ib3">
+        <img src="./assets/sprites/booms/invader_black/ib4.png" id="ib4">
+        <img src="./assets/sprites/booms/invader_black/ib5.png" id="ib5">
+        <img src="./assets/sprites/booms/invader_black/ib6.png" id="ib6">
+        <img src="./assets/sprites/booms/invader_black/ib7.png" id="ib7">
+        <img src="./assets/sprites/booms/invader_black/ib8.png" id="ib8">
+        <img src="./assets/sprites/booms/invader_black/ib9.png" id="ib9">
+        <img src="./assets/sprites/booms/invader_black/ib10.png" id="ib10">
+        <img src="./assets/sprites/booms/invader_black/ib11.png" id="ib11">
+        <img src="./assets/sprites/booms/invader_black/ib12.png" id="ib12">
+        <img src="./assets/sprites/booms/invader_black/ib13.png" id="ib13">
+        <img src="./assets/sprites/booms/invader_black/ib14.png" id="ib14">
+        <img src="./assets/sprites/booms/invader_black/ib15.png" id="ib15">
+
+        <!-- SMOKE STANDARD -->
+        <img src="./assets/sprites/booms/smoke/smoke0.png" id="smoke_standard0">
+        <img src="./assets/sprites/booms/smoke/smoke1.png" id="smoke_standard1">
+        <img src="./assets/sprites/booms/smoke/smoke2.png" id="smoke_standard2">
+        <img src="./assets/sprites/booms/smoke/smoke3.png" id="smoke_standard3">
+        <img src="./assets/sprites/booms/smoke/smoke4.png" id="smoke_standard4">
+        <img src="./assets/sprites/booms/smoke/smoke5.png" id="smoke_standard5">
+        <img src="./assets/sprites/booms/smoke/smoke6.png" id="smoke_standard6">
+        <img src="./assets/sprites/booms/smoke/smoke7.png" id="smoke_standard7">
+        <img src="./assets/sprites/booms/smoke/smoke8.png" id="smoke_standard8">
+        <img src="./assets/sprites/booms/smoke/smoke9.png" id="smoke_standard9">
+        <img src="./assets/sprites/booms/smoke/smoke10.png" id="smoke_standard10">
+        <img src="./assets/sprites/booms/smoke/smoke11.png" id="smoke_standard11">
+        <img src="./assets/sprites/booms/smoke/smoke12.png" id="smoke_standard12">
+        <img src="./assets/sprites/booms/smoke/smoke13.png" id="smoke_standard13">
+        <img src="./assets/sprites/booms/smoke/smoke14.png" id="smoke_standard14">
+        <img src="./assets/sprites/booms/smoke/smoke15.png" id="smoke_standard15">
+        <img src="./assets/sprites/booms/smoke/smoke16.png" id="smoke_standard16">
+        <img src="./assets/sprites/booms/smoke/smoke17.png" id="smoke_standard17">
+        <img src="./assets/sprites/booms/smoke/smoke18.png" id="smoke_standard18">
+        <img src="./assets/sprites/booms/smoke/smoke19.png" id="smoke_standard19">
+
+        <!-- SMOKE SMALL -->
+        <img src="./assets/sprites/booms/smoke_small/smoke_small0.png" id="smoke_small0">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small1.png" id="smoke_small1">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small2.png" id="smoke_small2">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small3.png" id="smoke_small3">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small4.png" id="smoke_small4">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small5.png" id="smoke_small5">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small6.png" id="smoke_small6">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small7.png" id="smoke_small7">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small8.png" id="smoke_small8">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small9.png" id="smoke_small9">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small10.png" id="smoke_small10">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small11.png" id="smoke_small11">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small12.png" id="smoke_small12">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small13.png" id="smoke_small13">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small14.png" id="smoke_small14">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small15.png" id="smoke_small15">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small16.png" id="smoke_small16">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small17.png" id="smoke_small17">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small18.png" id="smoke_small18">
+        <img src="./assets/sprites/booms/smoke_small/smoke_small19.png" id="smoke_small19">
+
+        <!-- EXPLOSION STANDARD -->
+        <img src="./assets/sprites/booms/exp/exp0.png" id="exp0">
+        <img src="./assets/sprites/booms/exp/exp1.png" id="exp1">
+        <img src="./assets/sprites/booms/exp/exp2.png" id="exp2">
+        <img src="./assets/sprites/booms/exp/exp3.png" id="exp3">
+        <img src="./assets/sprites/booms/exp/exp4.png" id="exp4">
+        <img src="./assets/sprites/booms/exp/exp5.png" id="exp5">
+        <img src="./assets/sprites/booms/exp/exp6.png" id="exp6">
+        <img src="./assets/sprites/booms/exp/exp7.png" id="exp7">
+        <img src="./assets/sprites/booms/exp/exp8.png" id="exp8">
+        <img src="./assets/sprites/booms/exp/exp9.png" id="exp9">
+        <img src="./assets/sprites/booms/exp/exp10.png" id="exp10">
+        <img src="./assets/sprites/booms/exp/exp11.png" id="exp11">
+        <img src="./assets/sprites/booms/exp/exp12.png" id="exp12">
+        <img src="./assets/sprites/booms/exp/exp13.png" id="exp13">
+        <img src="./assets/sprites/booms/exp/exp14.png" id="exp14">
+        <img src="./assets/sprites/booms/exp/exp15.png" id="exp15">
+        <img src="./assets/sprites/booms/exp/exp16.png" id="exp16">
+        <img src="./assets/sprites/booms/exp/exp17.png" id="exp17">
+        <img src="./assets/sprites/booms/exp/exp18.png" id="exp18">
+        <img src="./assets/sprites/booms/exp/exp19.png" id="exp19">
+
+        <!-- EXPLOSION BIG -->
+        <img src="./assets/sprites/booms/exp_big/exp_big0.png" id="exp_big0">
+        <img src="./assets/sprites/booms/exp_big/exp_big1.png" id="exp_big1">
+        <img src="./assets/sprites/booms/exp_big/exp_big2.png" id="exp_big2">
+        <img src="./assets/sprites/booms/exp_big/exp_big3.png" id="exp_big3">
+        <img src="./assets/sprites/booms/exp_big/exp_big4.png" id="exp_big4">
+        <img src="./assets/sprites/booms/exp_big/exp_big5.png" id="exp_big5">
+        <img src="./assets/sprites/booms/exp_big/exp_big6.png" id="exp_big6">
+        <img src="./assets/sprites/booms/exp_big/exp_big7.png" id="exp_big7">
+        <img src="./assets/sprites/booms/exp_big/exp_big8.png" id="exp_big8">
+        <img src="./assets/sprites/booms/exp_big/exp_big9.png" id="exp_big9">
+        <img src="./assets/sprites/booms/exp_big/exp_big10.png" id="exp_big10">
+        <img src="./assets/sprites/booms/exp_big/exp_big11.png" id="exp_big11">
+        <img src="./assets/sprites/booms/exp_big/exp_big12.png" id="exp_big12">
+        <img src="./assets/sprites/booms/exp_big/exp_big13.png" id="exp_big13">
+        <img src="./assets/sprites/booms/exp_big/exp_big14.png" id="exp_big14">
+        <img src="./assets/sprites/booms/exp_big/exp_big15.png" id="exp_big15">
+        <img src="./assets/sprites/booms/exp_big/exp_big16.png" id="exp_big16">
+        <img src="./assets/sprites/booms/exp_big/exp_big17.png" id="exp_big17">
+        <img src="./assets/sprites/booms/exp_big/exp_big18.png" id="exp_big18">
+        <img src="./assets/sprites/booms/exp_big/exp_big19.png" id="exp_big19">
+    <!-- BOOMS END -->
+
+
+    <!-- SOUND EFFECTS -->
+        <audio src="./assets/audio/laser.ogg" id="lasersound" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/beep.ogg" id="beepsound" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/reload.ogg" id="reloadsound" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/hit.ogg" id="hitsound" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/hitquad.ogg" id="hitquadsound" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/hitmetal.ogg" id="hitmetalsound" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/shielddown.ogg" id="shielddown" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/shieldup.ogg" id="shieldup" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/boom_std.ogg" id="boom_std" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/boom_smoke.ogg" id="boom_smoke" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/boom_phase.ogg" id="boom_phase" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/boom_exp.ogg" id="boom_exp" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/boom_bigexp.ogg" id="boom_bigexp" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/boom_phew.ogg" id="boom_phew" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/diver.ogg" id="diversound" type="audio/mpeg"></audio>
+    <!-- SOUND EFFECTS END -->
+
+
+    <!-- MUSIC -->
+        <audio src="./assets/audio/music/musics0.ogg" id="musicStage0" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musics1.ogg" id="musicStage1" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musics2.ogg" id="musicStage2" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musics3.ogg" id="musicStage3" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musics4.ogg" id="musicStage4" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicb0.ogg" id="musicBoss0" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicb1.ogg" id="musicBoss1" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicb2.ogg" id="musicBoss2" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicb3.ogg" id="musicBoss3" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicb4.ogg" id="musicBoss4" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicgameover.ogg" id="musicGameover" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicslowmo.ogg" id="musicSlowmo" type="audio/mpeg"></audio>
+        <audio src="./assets/audio/music/musicclock.ogg" id="musicClock" type="audio/mpeg"></audio>
+    <!-- MUSIC END -->
+
+    <script src="./app.js" type="module"></script>
+</body>
+</html>

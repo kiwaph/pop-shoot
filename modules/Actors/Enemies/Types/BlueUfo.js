@@ -1,0 +1,64 @@
+import { Enemy } from "../Enemy.js";
+import { BLUEUFOSPRITE } from "../../../Assets/Enemies.js";
+import { Movement } from "../../../Logic/Motion/Movement.js";
+import { game } from "../../../../app.js";
+import { FireLaser } from "../../../Lasers/Hostile/FireLaser.js";
+import { randomInRange } from "../../../Logic/Helpers.js";
+import { Shake } from "../../../Graphics/Effects/Shake.js";
+import { Boom } from "../../../Graphics/Effects/Boom.js";
+import { Difficulty } from "../../../Logic/State/Difficulty.js";
+
+// MOVEMENT
+const SPEED = 1;
+const MOVEDIRECTION = 90;   // Angle (0=EAST 90=South 180=WEST 270=NORTH)
+
+// SHOOTING
+const LASERSPEED = 4;
+const FIRINGRATE = 75;
+
+// STATE
+const HP = Difficulty.baseUfoHp * Difficulty.blueHpMultiplier;
+const SCOREBALLS = Difficulty.baseUfoScore * Difficulty.blueScoreMultiplier;
+const RADIUS = 17;
+const SPRITE = BLUEUFOSPRITE;
+
+export class BlueUfo extends Enemy {
+    constructor() {
+        super(RADIUS, HP, SCOREBALLS, SPRITE, SPEED, FIRINGRATE);
+    }
+
+    move() {
+        this.x = this.speed * Math.sin(this.y / 30) + this.x;
+        this.y += Movement.move(MOVEDIRECTION, this.speed).y;
+        this.step();
+    }
+
+    shoot() {
+        game.firelasers.add(new FireLaser(this.x, this.y, randomInRange(0, 360), LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, randomInRange(0, 360), LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, randomInRange(0, 360), LASERSPEED));
+    }
+
+    explode() {
+        game.firelasers.add(new FireLaser(this.x, this.y, 0, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 30, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 60, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 90, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 120, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 150, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 180, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 210, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 240, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 270, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 300, LASERSPEED));
+        game.firelasers.add(new FireLaser(this.x, this.y, 330, LASERSPEED));
+    }
+
+    die() {
+        game.audiocontroller.playBoomSound('std');
+        game.particles.add(new Boom(this.x, this.y, 'exp'));
+        Shake.addShake(4, 0.5);
+        this.explode();
+        super.die();
+    }
+}
